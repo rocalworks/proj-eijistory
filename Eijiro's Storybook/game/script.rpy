@@ -4,14 +4,21 @@
 # eg. image eileen happy = "eileen_happy.png"
 
 # Declare characters used by this game.
-define e = Character('Eileen', color="#c8ffc8")
+define un_narr = Character('');
+define ej_narr = Character('', color="#ff00ff")
+define ej_conv = Character('Eijiro') 
 
 
 # The game starts here.
 label start:
 
-    e "You've created a new Ren'Py game."
+    # starting scene == black
+    un_narr "This is a Ren'Py test. Seriously."
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    # scene shifts to school 
+    
+    ej_conv "Why would we even try to take this test, anyway?"
+    
+    
 
     return

@@ -1,0 +1,21 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 16, in script
+    eiji_nar "This is frustrating."
+Exception: Sayer 'eiji_nar' is not defined.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 16, in script
+    eiji_nar "This is frustrating."
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/ast.py", line 573, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/ast.py", line 491, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
+Exception: Sayer 'eiji_nar' is not defined.
+
+Darwin-13.0.0-x86_64-i386-64bit
+Ren'Py 6.18.3.761
+Eijiro's Storybook 0.0
