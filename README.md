@@ -4,7 +4,7 @@ RYXIE'S BALIWBRARY PROJECT #1 : EIJIRO'S STORYBOOK
 
 DISCLAIMER AND COPYRIGHT: 
 
-I ONLY OWNED THE SCRIPT (story plot + some programming stuffs). Game assets such as images and music that are being used here are from the owners (see "Credits" section) which I modified a bit (I checked their terms and it's okay to do so). And this game is made using Ren'Py VN Engine, so I don't own the game engine as well (if only I can make my own.... *sulking in a corner*) 
+I ONLY OWNED THE SCRIPT (story plot + some programming stuffs). Game assets such as images and music that are being used here are from the owners (see "Credits" section) which I modified a bit (I checked their terms and it's okay to do so). And this game is made using Ren'Py VN Engine, so I don't own the game engine as well (if only I can make my own...).
 
 
 
