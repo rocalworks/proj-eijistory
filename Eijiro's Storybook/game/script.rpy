@@ -1,9 +1,39 @@
 ﻿# --- IMAGES ---
-# declare images below this line, using the image statement.
-# eg. image eileen happy = "eileen_happy.png"
-# --
+# (images credits to Uncle Mugen[background] and Tokudaya[CGs])
 
-# --- CHARACTERS ---
+# DIRPATH TO CG
+define cgpath = "assets/image/cg/"
+
+# EIJIRO
+define ejpath = cgpath + "eijiro/eijiro_"
+image ej annoy = ejpath + "annoyed.png"
+image ej drop  = ejpath + "drop.png"
+image ej sarca = ejpath + "sarcastic.png"
+image ej shock = ejpath + "shocked.png"
+
+# RITSU
+define rspath = cgpath + "ritsu/ritsu_"
+image rs aloof = rspath + "aloof.png"
+image rs confi = rspath + "confident.png"
+image rs happy = rspath + "happy.png"
+image rs angry = rspath + "mad.png"
+image rs smug  = rspath + "smug.png"
+
+# DIRPATH TO BG
+define bgpath = "assets/image/bg/"
+
+# EMPTY SCENE
+define black = bgpath + "black.jpg"
+
+# SCHOOL SETTING DIRAPATH
+define skpath = bgpath + "school/"
+
+# - corridor
+image sk coriday  = skpath + "corridor/morning.jpg" 
+## --
+
+
+# --- CONVERSATIONS AND NARRATIONS ---
 # declare characters used by this game.
 
 # character narration
@@ -14,35 +44,89 @@ define rs_narr = Character('', color="#00ff00")
 # character conversation
 define ej_conv = Character('Eijiro') 
 define rs_conv = Character('Ritsu')
-# --
+## --
 
+
+# --- MODIFIED CG POSITIONS
+init: 
+    $ cleft  = Position(xpos=0.15, xanchor=0.0, ypos=0.0, yanchor=0.0)
+    $ cright = Position(xpos=0.60, xanchor=0.0, ypos=0.0, yanchor=0.0)
+## --
+
+
+# --- GAME START ---
 # The game starts here.
 label start:
 
     # starting scene == black
+    scene black
     un_narr "We're going to test how this engine works."
 
-    # scene shifts to school 
+    # scene shifts to school corridor
+    scene sk coriday
     
-    # shows eijiro_annoyed
+    # shows eijiro_annoyed.
+    show ej annoy
     ej_conv "Why would we even try to take this test, anyway?"
-    ej_conv "It's not that you didn't do this before."
+    ej_conv "It's not that you didn't do this before...{w} or did you really not try this one?"
     
-    # shows ritsu_happy beside him
+    # shows ritsu_happy beside him.
+    show ej annoy at cleft
+    show rs happy at cright
     rs_conv "It's okay, Eijiro!"
     rs_conv "The developer will give us some incentives after this work. Am I right, dev?"
     
     un_narr "No."
     
-    # shift ritsu -> ritsu_mad
-    rs_conv "WHY IN THE HELL WON'T YOU GIVE SOME INSENTIVES??!! DID YOU KNOW IT'S TIRING TO JUST STAND IN HERE AND DO NOTHING???!!!"
+    # shift ritsu -> ritsu_mad.
+    show rs angry
+    rs_conv "I shall sue you with child abuse."
     
-    # shift eijiro -> eijiro_drop
-    ej_conv "It's really impressive that you shifted your expression so quickly."
+    # shift eijiro -> eijiro_drop.
+    show ej drop
+    ej_conv "It's really impressive that you shifted your side so quickly."
     
-    # shift ritsu -> ritsu_pout
+    # shift ritsu -> ritsu_aloof.
+    show rs aloof
     rs_conv "Well, at least I don't have a boring personality like someone out there."
     
-    # shift eijiro -> eijiro_
-
+    # shift eijiro -> eijiro_sarcastic.
+    show ej sarca
+    ej_conv "Sorry if I'm too boring for a crazy kid like you."
+    
+    # shift ritsu -> ritsu_happy.
+    show rs happy 
+    rs_conv "Thanks for the compliment."
+    # shift ritsu -> ritsu_confident.
+    show rs confi
+    rs_conv "Oh, or maybe you're not exaggerating too much."
+    
+    # shift eijiro -> eijiro_shocked.
+    # note: italic text for mind-emphasis
+    show ej shock
+    ej_conv "{i}She really accepted it? And she even wants more?!{/i}"
+    
+    un_narr "Okay, okay. This is just a test run, so don't make your dialogues too long, a'ight?"
+    
+    # shift eijiro -> eijiro_drop.
+    show ej drop
+    ej_conv "Aren't you the one who's typing this whole script?"
+    
+    un_narr "No. I'm just an innocent narrator in this skit."
+    
+    # shift eijiro -> eijiro_shocked.
+    show ej shock
+    ej_conv "THIS IS A SKIT??!!!"
+    
+    # shift ritsu -> ritsu_happy.
+    show rs happy at center
+    rs_conv "Well, everyone. This story will get released soon, so please stay tuned!"
+    # shift ritsu -> ritsu_smug
+    show rs smug
+    rs_conv "Or you can pressure the developer to make it sooner. Huehuehuehue..."
+    
+    # shift eijiro -> eijiro_drop.
+    show ej drop
+    ej_conv "She'll be dead if you do that, y'know."
+             
     return

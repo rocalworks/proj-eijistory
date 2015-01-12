@@ -1,20 +1,64 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 16, in script
-    eiji_nar "This is frustrating."
-Exception: Sayer 'eiji_nar' is not defined.
+  File "game/script.rpy", line 56, in script
+    ej_conv "Why would we even try to take this test, anyway?"
+IOError: Couldn't find file 'assets/image/bg/school/corridor/morning.jpg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 16, in script
-    eiji_nar "This is frustrating."
-  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/ast.py", line 573, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/ast.py", line 491, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
-Exception: Sayer 'eiji_nar' is not defined.
+  File "game/script.rpy", line 56, in script
+    ej_conv "Why would we even try to take this test, anyway?"
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/ast.py", line 593, in execute
+    renpy.exports.say(who, what, interact=self.interact)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/exports.py", line 999, in say
+    who(what, interact=interact)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/character.py", line 826, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/character.py", line 688, in do_display
+    **display_args)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/character.py", line 491, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/ui.py", line 247, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/display/core.py", line 2149, in interact
+    repeat, rv = self.interact_core(preloads=preloads, **kwargs)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/display/core.py", line 2478, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/display/core.py", line 1677, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 363, in renpy.display.render.render_screen (gen/renpy.display.render.c:5330)
+  File "render.pyx", line 174, in renpy.display.render.render (gen/renpy.display.render.c:2537)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/display/layout.py", line 618, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 98, in renpy.display.render.render (gen/renpy.display.render.c:2849)
+  File "render.pyx", line 174, in renpy.display.render.render (gen/renpy.display.render.c:2537)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/display/layout.py", line 618, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 98, in renpy.display.render.render (gen/renpy.display.render.c:2849)
+  File "render.pyx", line 174, in renpy.display.render.render (gen/renpy.display.render.c:2537)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/display/layout.py", line 618, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 98, in renpy.display.render.render (gen/renpy.display.render.c:2849)
+  File "render.pyx", line 174, in renpy.display.render.render (gen/renpy.display.render.c:2537)
+  File "accelerator.pyx", line 108, in renpy.display.accelerator.transform_render (gen/renpy.display.accelerator.c:1922)
+  File "render.pyx", line 174, in renpy.display.render.render (gen/renpy.display.render.c:2537)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/display/image.py", line 207, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/display/image.py", line 82, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 98, in renpy.display.render.render (gen/renpy.display.render.c:2849)
+  File "render.pyx", line 174, in renpy.display.render.render (gen/renpy.display.render.c:2537)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/display/im.py", line 465, in render
+    im = cache.get(self)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/display/im.py", line 198, in get
+    surf = image.load()
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/display/im.py", line 509, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
+  File "/Users/rayvenenoso/Desktop/OJT - rocalworks/visual novel/renpy-6.18.3-sdk/renpy/loader.py", line 438, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'assets/image/bg/school/corridor/morning.jpg'.
 
 Darwin-13.0.0-x86_64-i386-64bit
 Ren'Py 6.18.3.761
