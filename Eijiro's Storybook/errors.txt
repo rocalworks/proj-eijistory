@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 32: Line is indented, but the preceding image statement statement does not expect a block. Please check this line's indentation.
-    skcoriday = "assets/image/bg/school/corridor/morning.jpg" 
-    ^
+File "game/script.rpy", line 61: expected ':' not found.
+    transform center_to_left
+                            ^
 
 Ren'Py Version: Ren'Py 6.18.3.761

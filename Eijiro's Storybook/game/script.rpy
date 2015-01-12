@@ -47,12 +47,21 @@ define rs_conv = Character('Ritsu')
 ## --
 
 
-# --- MODIFIED CG POSITIONS
+# --- MODIFIED CG POSITIONS ---
 init: 
     $ cleft  = Position(xpos=0.15, xanchor=0.0, ypos=0.0, yanchor=0.0)
     $ cright = Position(xpos=0.60, xanchor=0.0, ypos=0.0, yanchor=0.0)
 ## --
 
+# --- ANIMATIONS AND TRANSITIONS ---
+transform right_to_center:
+    xalign 0.83 yalign 0.0
+    linear 1.0 xalign 0.5
+    
+transform center_to_left:
+    xalign 0.5 yalign 0.0
+    linear 1.0 xalign 0.15
+## --
 
 # --- GAME START ---
 # The game starts here.
@@ -64,15 +73,19 @@ label start:
 
     # scene shifts to school corridor
     scene sk coriday
+    with fade 
     
     # shows eijiro_annoyed.
     show ej annoy
+    with dissolve
     ej_conv "Why would we even try to take this test, anyway?"
     ej_conv "It's not that you didn't do this before...{w} or did you really not try this one?"
     
     # shows ritsu_happy beside him.
-    show ej annoy at cleft
+    show ej annoy at center_to_left
+    with None
     show rs happy at cright
+    with dissolve
     rs_conv "It's okay, Eijiro!"
     rs_conv "The developer will give us some incentives after this work. Am I right, dev?"
     
@@ -106,6 +119,9 @@ label start:
     show ej shock
     ej_conv "{i}She really accepted it? And she even wants more?!{/i}"
     
+    # shift ritsu -> ritsu_smug (just to shut her mouth lol)
+    show rs smug
+    
     un_narr "Okay, okay. This is just a test run, so don't make your dialogues too long, a'ight?"
     
     # shift eijiro -> eijiro_drop.
@@ -119,7 +135,7 @@ label start:
     ej_conv "THIS IS A SKIT??!!!"
     
     # shift ritsu -> ritsu_happy.
-    show rs happy at center
+    show rs happy at right_to_center
     rs_conv "Well, everyone. This story will get released soon, so please stay tuned!"
     # shift ritsu -> ritsu_smug
     show rs smug
