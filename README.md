@@ -1,5 +1,7 @@
 RYXIE'S BALIWBRARY PROJECT #1 : EIJIRO'S STORYBOOK
 
+UPDATE: 
+I'll be transferring my files to BitBucket (since I can't download GitHub software into my personal PC and I hate the idea on pushing it on my work PC). This repo will be on standby until further notice. :3
 
 
 DISCLAIMER AND COPYRIGHT: 
